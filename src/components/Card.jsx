@@ -6,17 +6,21 @@ function Card(props) {
   function GetPriorityBadge() {
     const priority = props.priority;
     switch (priority) {
-      case 1:
+      case "1":
         return(
           <span className="badge bg-danger">High</span>
         );
-      case 2:
+      case "2":
         return (
           <span className="badge bg-warning">Medium</span>
         );
-      case 3:
+      case "3":
         return (
           <span className="badge bg-success">Low</span>
+        );
+      default:
+        return (
+          <span className="badge bg-info">Not Set</span>
         );
     }
   }
@@ -39,13 +43,12 @@ function Card(props) {
               <BsPencilFill className="button-icon"/>
               Edit
             </a>
-            <a 
-            href="#" 
+            <button 
             className="btn btn-success ms-1" 
             onClick={() => props.deleteTodoHandler(props.id)}>
               <BsCheckSquareFill className="button-icon"/>
               Completed!
-            </a>
+            </button>
           </div>
         </div>
       </div>

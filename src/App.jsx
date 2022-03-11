@@ -12,21 +12,21 @@ function App() {
       id : nanoid(),
       title : "Tugas Fisika Listrik dan Magnet",
       desc : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab, placeat.",
-      priority: 2,
+      priority: "2",
       tags : "#Lorem"
     },
     {
       id : nanoid(),
       title : "Tugas Aljabar Linear",
       desc : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab, placeat.",
-      priority : 1,
+      priority : "1",
       tags : "#Ipsum"
     },
     {
       id : nanoid(),
       title : "Tugas Analisis Variabel Kompleks",
       desc : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab, placeat.",
-      priority : 3,
+      priority : "3",
       tags : "#Dolor"
     }
   ]);

@@ -1,7 +1,12 @@
 import { nanoid } from "nanoid";
+import { useState } from "react";
 import { BsFillPlusSquareFill } from "react-icons/bs";
 
 function Form(props) {
+  const [title, setTitle] = useState('');
+  const [desc, setDesc] = useState('');
+  const [priority, setPriority] = useState(0);
+
   return (
     <form className="px-5 py-4 w-100">
       <div className="mb-2">
@@ -11,8 +16,9 @@ function Form(props) {
         <input
           className="form-control"
           id="exampleInputEmail1"
-          aria-describedby="emailHelp"
           placeholder="Insert title here"
+          value={title}
+          onChange = {(e) => setTitle(e.target.value)}
         />
       </div>
       <div className="mb-3">
@@ -23,16 +29,24 @@ function Form(props) {
           className="form-control"
           id="exampleFormControlTextarea1"
           rows={3}
-          defaultValue={""}
+          value={desc}
+          onChange={(e) => setDesc(e.target.value)}
           placeholder="Insert description here"
         />
       </div>
       <div className="input-group mb-3">
         <label className="input-group-text" htmlFor="inputGroupSelect01">
-          Priority
+          Priority: {priority}
         </label>
-        <select className="form-select" id="inputGroupSelect01">
-          <option defaultValue>Choose priority</option>
+        <select 
+        className="form-select" 
+        id="inputGroupSelect01"
+        onChange={(e) => {
+          const selectedPriority = e.target.value;
+          setPriority(selectedPriority);
+        }}
+        >
+          <option value={0} >Choose priority</option>
           <option value={1} >High</option>
           <option value={2} >Medium</option>
           <option value={3} >Low</option>
@@ -40,15 +54,15 @@ function Form(props) {
       </div>
 
       <button 
-      type="submit" 
+      type="button" 
       className="btn btn-primary"
       onClick={() => {
         const todo = {
           id: nanoid(),
-          title: "dummy title",
-          desc: "dummy description lorem ipsum",
+          title: title,
+          desc: desc,
           tags: "#any",
-          priority: 1
+          priority: priority
         }
         props.addNewTodoHandler(todo);
       }}
