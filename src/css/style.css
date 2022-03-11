@@ -14,7 +14,7 @@ h1 {
 
 form textarea {
   resize: none;
-  height: 125px !important;
+  height: 70px !important;
 }
 form select option .high-pr {
   color: red !important;
