@@ -1,3 +1,7 @@
 # To do list
 
-no ingfo
+## Preview
+![](./src/images/preview.jpg)
+
+## Features
+- no ingfo
