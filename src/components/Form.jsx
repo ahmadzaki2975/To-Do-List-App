@@ -14,6 +14,7 @@ function Form(props) {
           Title
         </label>
         <input
+          name="title"
           className="form-control"
           id="exampleInputEmail1"
           placeholder="Insert title here"
@@ -36,7 +37,7 @@ function Form(props) {
       </div>
       <div className="input-group mb-3">
         <label className="input-group-text" htmlFor="inputGroupSelect01">
-          Priority: {priority}
+          Priority:
         </label>
         <select 
         className="form-select" 
@@ -46,7 +47,6 @@ function Form(props) {
           setPriority(selectedPriority);
         }}
         >
-          <option value={0} >Choose priority</option>
           <option value={1} >High</option>
           <option value={2} >Medium</option>
           <option value={3} >Low</option>
@@ -65,6 +65,9 @@ function Form(props) {
           priority: priority
         }
         props.addNewTodoHandler(todo);
+        setTitle('');
+        setDesc('');
+        setPriority(0);
       }}
       >
         <BsFillPlusSquareFill className="button-icon"/>

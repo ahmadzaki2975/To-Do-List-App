@@ -8,10 +8,6 @@ body {
   width: 100%;
 }
 
-// div {
-//   // outline: red 1px solid;
-// }
-
 h1 {
   margin-bottom: 20px;
 }
@@ -44,13 +40,14 @@ nav {
 .card-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  justify-content: center;
+  place-items: center;
   padding: 10px 20px 10px 20px;
   row-gap: 20px;
   column-gap: 10px;
   margin-bottom: 100px;
   margin-left: 40px;
   margin-right: 40px;
+  margin-top: 20px;
   .card-head {
     display: flex;
     flex-direction: column;
@@ -62,6 +59,34 @@ nav {
       height: 20px;
     }
   }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+.card-text {
+  height: 70px;
+  overflow-y: scroll;
+}
+
+.finished {
+  font-size: large;
+  margin-bottom: 0;
+}
+
+.alert {
+  position: absolute;
+  margin-top: 80px;
+  width: 50%;
+  text-align: center;
+  font-size: larger;
 }
 
 @media screen and (max-width: 1200px) {

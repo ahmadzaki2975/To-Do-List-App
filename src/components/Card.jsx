@@ -36,8 +36,8 @@ function Card(props) {
           <p className="card-text text-justify">
             {props.desc}
           </p>
-          <h6>Tags</h6>
-          <p>{props.tags}</p>
+          {/* <h6>Tags</h6>
+          <p>{props.tags}</p> */}
           <div className="d-flex justify-content-start">
             <a href="#" className="btn btn-secondary me-2">
               <BsPencilFill className="button-icon"/>
